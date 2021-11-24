@@ -1,0 +1,44 @@
+package com.moqtar.transport.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import com.moqtar.transport.dao.entity.UserLogin;
+
+@Repository
+public class UserLoginRepo {
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
+    class UserLoginRowMapper implements RowMapper < UserLogin > {
+        @Override
+        public UserLogin mapRow(ResultSet rs, int rowNum) throws SQLException {
+            UserLogin userLogin = new UserLogin();
+            userLogin.setUserName(rs.getString("user_name"));
+            userLogin.setPwd(rs.getString("pwd"));
+            
+            return userLogin;
+        }
+    }
+
+    public List < UserLogin > findAll() {
+        return jdbcTemplate.query("select * from userlogin", new UserLoginRowMapper());
+    }
+
+    public UserLogin findByUserNameAndPassword(String userName, String pwd) {
+        return jdbcTemplate.queryForObject("select * from userLogin where user_name=? and pwd =? ", new Object[] {
+            userName, pwd
+            },
+            new BeanPropertyRowMapper < UserLogin > (UserLogin.class));
+    }
+
+     
+}
