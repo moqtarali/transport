@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.moqtar.transport.model</groupId>
-	<artifactId>SpringBootHelloWorldExample</artifactId>
+	<artifactId>TransportApp</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBootHelloWorldExample Maven Webapp</name>
+	<name>TransportApp</name>
 	<url>http://maven.apache.org</url>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -29,9 +29,24 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+		<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+			<version>5.1.45</version>
+    		<scope>runtime</scope>
+        </dependency>
 	</dependencies>
 
 	<build>
-		<finalName>SpringBootHelloWorldExample</finalName>
+		<finalName>TransportApp</finalName>
 	</build>
 </project>

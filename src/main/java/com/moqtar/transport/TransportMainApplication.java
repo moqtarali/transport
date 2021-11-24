@@ -1,4 +1,4 @@
-package com.moqtar.transport.main;
+package com.moqtar.transport;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
