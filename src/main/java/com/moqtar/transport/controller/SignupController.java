@@ -14,29 +14,36 @@ import com.moqtar.transport.dao.UserLoginRepo;
 import com.moqtar.transport.dao.entity.UserDetailes;
 import com.moqtar.transport.model.SignupBean;
 
+import com.moqtar.transport.dao.entity.UserDetailes;
+
 @Controller
 public class SignupController {
 	@Autowired
 	private UserDetailesRepo userDetailesRepo;
 
+	@Autowired
+	private UserLoginRepo userLoginRepo;
+
 	@RequestMapping(params= "signup",value = "/login", method = RequestMethod.POST)
 	public ModelAndView init(Model model) {
 	//	SignupBean userForm = new SignupBean();
 		model.addAttribute("msg", "Please Enter Your Signup Details");
-		model.addAttribute("SignupBean", new SignupBean());
+		model.addAttribute("signupBean", new SignupBean());
 		return new ModelAndView("signup");
 	}
 
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 
-	public ModelAndView save(@ModelAttribute("SignupBean") SignupBean signupBean, BindingResult result,
+	public ModelAndView save(@ModelAttribute("signupBean") SignupBean signupBean, BindingResult result,
 			ModelMap model) {
-		UserDetailes userDetailes = new UserDetailes(signupBean.getFullname(), signupBean.getLastname(),
-				signupBean.getuserName(), signupBean.getPassword(), signupBean.getEmail(), signupBean.getDOB(),
-				signupBean.getAddress(), signupBean.getmobileNumber());
+				System.out.println(signupBean.toString());
+		UserDetailes userDetailes = new UserDetailes(signupBean.getFullName(), signupBean.getLastName(),
+				signupBean.getUserName(), signupBean.getPassword(), signupBean.getEmail(), signupBean.getDOB(),
+				signupBean.getAddress(), signupBean.getMobileNumber());
 		userDetailesRepo.insert(userDetailes);
+		userLoginRepo.insert(userDetailes);
 
-		model.addAttribute("msg", signupBean.getuserName());
+		model.addAttribute("msg", signupBean.getUserName());
 		return new ModelAndView("registerationsucess");
 
 	}

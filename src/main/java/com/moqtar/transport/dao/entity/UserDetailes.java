@@ -1,91 +1,95 @@
 package com.moqtar.transport.dao.entity;
 
 public class UserDetailes {
-	private String FullName;
-	private String Lastname;
-	private String UserName;
-	private String Pswd;
-	private String Email;
-	private String DOfB;
-	private String Address;
-	private String MobNumber;
-	
-	public UserDetailes(){
-			}
-	
-	 public UserDetailes(String FullName,String Lastname,String UserName,String Pswd,String Email,String DOfB, String Address,String MobNumber)
-	    {
-	        this.FullName =FullName;
-	        this.Lastname=Lastname;
-	        this.UserName=UserName;
-	        this.Pswd=Pswd;
-	        this.Email= Email;
-	        this.DOfB= DOfB;
-	        this.Address= Address;
-	        this.MobNumber=MobNumber;
-	     }
-	 public  String getFullname() {
-			return this.FullName;
-		}
-
-		public void setFullname(String FullName) {
-			this. FullName =  FullName;
-		}
-		 public  String getLastname() {
-				return this.Lastname;
-			}
-
-			public void setLastname(String Lastname) {
-				this. Lastname = Lastname;
-			}
-			public String getuserName() {
-				return this.UserName;
-			}
-
-			public void setUserName(String UserName) {
-				this.UserName =UserName;
-			}
-			public String getPswd() {
-				return this.Pswd;
-			}
-
-			public void setPswd(String Pswd) {
-				this.Pswd =Pswd;
-			}
-			public String getEmail() {
-				return this.Email;
-			}
-
-			public void setEmail(String email) {
-				this.Email = email;
-			}
-			public String getDOfB() {
-				return this.DOfB;
-			}
-
-			public void setDOfB(String DOfB) {
-				this.DOfB=DOfB;
-			}
-			public String getAddress() {
-				return this.Address;
-			}
-
-			public void setAddress(String Address) {
-				this.Address=Address;
-			}
-			public String getMobNumber() {
-				return this.MobNumber;
-			}
-
-			public void setMobNumber(String MobNumber) {
-				this.MobNumber=MobNumber;
-			}
-			
-		
-
-	   
+	private String fullName;
+	private String lastName;
+	private String userName;
+	private String pswd;
+	private String email;
+	private String dOfB;
+	private String address;
+	private String mobNumber;
 	
 
+	public UserDetailes(String fullName, String lastName, String userName, String pswd, String email, String dOfB, String address, String mobNumber) {
+		this.fullName = fullName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.pswd = pswd;
+		this.email = email;
+		this.dOfB = dOfB;
+		this.address = address;
+		this.mobNumber = mobNumber;
+	}
+
+
+	public UserDetailes() {
+	}
+	
+
+	public String getFullName() {
+		return this.fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public String getLastName() {
+		return this.lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getUserName() {
+		return this.userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPswd() {
+		return this.pswd;
+	}
+
+	public void setPswd(String pswd) {
+		this.pswd = pswd;
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getDOfB() {
+		return this.dOfB;
+	}
+
+	public void setDOfB(String dOfB) {
+		this.dOfB = dOfB;
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getMobNumber() {
+		return this.mobNumber;
+	}
+
+	public void setMobNumber(String mobNumber) {
+		this.mobNumber = mobNumber;
+	}
 
 
 }

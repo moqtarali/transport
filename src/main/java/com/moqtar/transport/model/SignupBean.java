@@ -2,72 +2,87 @@ package com.moqtar.transport.model;
 
 public class SignupBean {
 	private String fullName;
-	private String lastname;
-	private String UserName;
-	private String Password;
-	private String Email;
-	private String DOB;
-	private String Address;
+	private String lastName;
+	private String userName;
+	private String password;
+	private String email;
+	private String dOB;
+	private String address;
 	private String mobileNumber;
 
-	public  String getFullname() {
+	public  String getFullName() {
 		return fullName;
 	}
 
-	public void setFullname(String fullname) {
-		this.fullName = fullname;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public String getuserName() {
-		return UserName;
+	public String getUserName() {
+		return this.userName;
 	}
 
 	public void setUserName(String userName) {
-		this.UserName = userName;
+		this.userName = userName;
 	}
 
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 
 	public void setPassword(String password) {
-		this.Password = password;
+		this.password = password;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		this.Email = email;
+		this.email = email;
 	}
 	public String getDOB() {
-		return DOB;
+		return dOB;
 	}
 
 	public void setDOB(String dob) {
-		this.DOB = dob;
+		this.dOB = dob;
 	}
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	public void setAddress(String address) {
-		this.Address = address;
+		this.address = address;
 	}
-	public String getmobileNumber() {
+	public String getMobileNumber() {
 		return  mobileNumber;
 	}
 
-	public void setmobileNumber(String  mobilenumber) {
-		this. mobileNumber =  mobilenumber;
+	public void setMobileNumber(String  mobileNumber) {
+		this. mobileNumber =  mobileNumber;
 	}
+
+	@Override
+	public String toString() {
+		return "{" +
+			" fullName='" + getFullName() + "'" +
+			", lastName='" + getLastName() + "'" +
+			", userName='" + getUserName() + "'" +
+			", password='" + getPassword() + "'" +
+			", email='" + getEmail() + "'" +
+			", dOB='" + getDOB() + "'" +
+			", address='" + getAddress() + "'" +
+			", mobileNumber='" + getMobileNumber() + "'" +
+			"}";
+	}
+
 }

@@ -11,7 +11,7 @@
 </head>
 <body>
     <div align="center">
-        <form:form action="register" method="post" commandName="userForm">
+        <form:form action="register" method="post" modelAttribute="signupBean">
             <table border="0">
                 <tr>
                     <td colspan="2" align="center"><h2>Spring MVC Form Demo - Registration</h2></td>
@@ -22,7 +22,7 @@
                 </tr>
 		 <tr>		
                     <td>LastName:</td>
-                    <td><form:input path="LastName" /></td>
+                    <td><form:input path="lastName" /></td>
                 </tr>
 
                 <tr>
@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                     <td>DOB:</td>
-                    <td><form:input path="DOB" /></td>
+                    <td><form:input path="dOB" /></td>
                 </tr>
                 <tr>
                     <td>Address:</td>
@@ -47,7 +47,7 @@
                 </tr>
 		 <tr>
                     <td>MobileNumber:</td>
-                    <td><form:input path="MobileNumber" /></td>
+                    <td><form:input path="mobileNumber" /></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center"><input type="submit" value="Register" /></td>
