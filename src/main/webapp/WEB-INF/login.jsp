@@ -9,7 +9,7 @@
 <title>Spring Login Form</title>
 </head>
 <body>
-<form:form name="submitForm" method="POST" modelAttribute="loginBean">
+<form:form action="login" name="submitForm" method="POST" modelAttribute="loginBean">
 
 
 <div align="center">
@@ -24,9 +24,10 @@
 </tr>
 <tr>
 <td></td>
-<td><input type="submit" value="Submit" /></td>
+<td><input type="submit" name="submit" value="Submit" /></td>
 </tr>
 </table>
+<input type="submit" name="signup" value="Signup" />
 <div style="color: red">${error}</div>
 
 </div>

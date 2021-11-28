@@ -1,4 +1,3 @@
-
 package com.moqtar.transport.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +32,7 @@ public class LoginController {
 	}
 
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(params = "submit",value = "/login",method = RequestMethod.POST)
 	public ModelAndView submit(@ModelAttribute("loginBean") LoginBean loginBean,BindingResult result, ModelMap model) {
 		System.out.println(result.toString());
 		System.out.println(loginBean);

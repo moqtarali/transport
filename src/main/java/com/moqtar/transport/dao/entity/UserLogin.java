@@ -1,7 +1,7 @@
 package com.moqtar.transport.dao.entity;
 
 public class UserLogin {
-    private String userName;
+	private String userName;
     private String pwd;
 
     public UserLogin()
@@ -29,3 +29,8 @@ public class UserLogin {
        this.pwd = pwd;
     }
 }
+	
+	
+	
+	
+	
