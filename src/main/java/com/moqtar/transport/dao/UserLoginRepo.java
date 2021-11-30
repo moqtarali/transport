@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.moqtar.transport.dao.entity.UserLogin;
+import com.moqtar.transport.dao.entity.Commodity;
 import com.moqtar.transport.dao.entity.UserDetailes;
 
 @Repository
@@ -48,6 +49,14 @@ public class UserLoginRepo {
 						+ "values(?, ?)",
 				new Object[] {  userDetailes.getUserName(),
 						userDetailes.getPswd() });
+	}
+    public int insert(Commodity run) {
+		System.out.println(run.getCarName());
+		return jdbcTemplate.update(
+				"insert into userLogin (user_name, pwd)"
+						+ "values(?, ?)",
+				new Object[] {  run.getSourceAdd(),
+						run.getDestinationAdd() });
 	}
 
 

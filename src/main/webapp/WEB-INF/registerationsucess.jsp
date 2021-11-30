@@ -21,38 +21,42 @@
             </tr>
 	    <tr>
                 <td>FullName:</td>
-                <td>${userForm.fullname}</td>
+                <td>${userDetailes.fullname}</td>
             </tr>
 	     <tr>
                 <td>LastName:</td>
-                <td>${userForm.lastname}</td>
+                <td>${userDetailes.lastname}</td>
             </tr>
             <tr>
                 <td>UserName:</td>
-                <td>${userForm.username}</td>
+                <td>${userDetailes.username}</td>
             </tr>
 	     <tr>
                 <td>Password:</td>
-                <td>${userForm.username}</td>
+                <td>${userDetailes.username}</td>
             </tr>
             <tr>
                 <td>E-mail:</td>
-                <td>${userForm.email}</td>
+                <td>${userDetailes.email}</td>
             </tr>
             <tr>
                 <td>DOB:</td>
-                <td>${userForm.birthDate}</td>
+                <td>${userDetailes.birthDate}</td>
             </tr>
             <tr>
                 <td>Address:</td>
-                <td>${userForm.address}</td>
+                <td>${userDetailes.address}</td>
             </tr>
 	    <tr>
                 <td>MobileNumber:</td>
-                <td>${userForm.mobilenumber}</td>
+                <td>${userDetailes.mobilenumber}</td>
+            </tr> 
+            <tr>
+           <td colspan="2" align="center"><input type="submit" value="run" /></td>
             </tr>
- 
         </table>
+       
     </div>
+    
 </body>
 </html>
