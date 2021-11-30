@@ -24,27 +24,25 @@ public class CommodityController {
 	@Autowired
 	private CommodityRepo commodityRepo;
 
-	@RequestMapping(params= "run",value = "/login", method = RequestMethod.POST)
+	@RequestMapping(params= "commodity",value = "/login", method = RequestMethod.POST)
 	public ModelAndView init(Model model) {
 			model.addAttribute("msg", "Please Enter Your Commodity Details");
-		model.addAttribute("CommodityRepo", new CommodityBean());
-		return new ModelAndView("CommodityRepo");
+		model.addAttribute("commodityBean", new CommodityBean());
+		return new ModelAndView("commodity");
 	}
 
-	@RequestMapping(value = "/run", method = RequestMethod.POST)
+	@RequestMapping(value = "/commodity", method = RequestMethod.POST)
 
 	public ModelAndView save(@ModelAttribute("CommodityBean") CommodityBean commodityBean, BindingResult result,
 			ModelMap model) {
-				System.out.println(commodityRepo.toString());
-	          	Commodity commodityBean = new Commodity(commodityBean.getCommodityDetailes(),commodityBean.getCarName(), commodityBean.getRegistrationNumber(),
-	          			 commodityBean.getSourceAdd(), commodityBean.getDestinationAdd());
+				System.out.println(commodityBean.toString());
+	          	Commodity commodity = new Commodity(commodityBean.getCommodityDetailes(),commodityBean.getCarName(), commodityBean.getRegistrationNumber(),
+	          			commodityBean.getSourceAdd(), commodityBean.getDestinationAdd());
 	          
-		runRepo.insert();
+	 //  	userDetailesRepo.insert(commodity);
 		commodityRepo.insert(commodity);
-
-		model.addAttribute("msg", commodityBean.getSourceAdd());
-		model.addAttribute("msg", commodityBean.getDestinationAdd());
-		return new ModelAndView("run");
+		model.addAttribute("msg", commodityBean.getCommodityDetailes());
+		return new ModelAndView("commodity");
 
 	}
 
