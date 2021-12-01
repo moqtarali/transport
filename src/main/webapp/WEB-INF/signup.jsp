@@ -14,7 +14,7 @@
         <form:form action="register" method="post" modelAttribute="signupBean">
             <table border="0">
                 <tr>
-                    <td colspan="2" align="center"><h2>Spring MVC Form Demo - Registration</h2></td>
+                    <td colspan="2" align="center"><h2>Form- Registration</h2></td>
                 </tr>
 		 <tr>
                     <td>fullName:</td>
