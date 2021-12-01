@@ -21,6 +21,9 @@ align = "center";
 
 <div align="center">
 <table>
+ <tr>
+<td colspan="2" align="center"><h2>Login</h2></td>
+ </tr>
 <tr>
 <td>User Name</td>
 <td><form:input type="text" path="userName" /></td>
