@@ -6,6 +6,16 @@ public class Commodity {
 	private String RegistrationNumber;
 	private String SourceAdd;
 	private String DestinationAdd;
+	
+	public Commodity(String CommodityDetailes, String CarName, String RegistrationNumber,String SourceAdd,String DestinationAdd ) {
+		
+		this.CommodityDetailes=CommodityDetailes;
+		this.CarName=CarName;
+		this.RegistrationNumber=RegistrationNumber;
+		this.SourceAdd= SourceAdd;
+		this.DestinationAdd=DestinationAdd;
+		
+	}	
 	public String getCommodityDetailes() {
 		return this.CommodityDetailes;
 	}

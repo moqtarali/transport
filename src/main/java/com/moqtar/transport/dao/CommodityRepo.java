@@ -1,5 +1,5 @@
 package com.moqtar.transport.dao;
-
+import java.lang.String;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,30 +20,31 @@ public class CommodityRepo {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-	class RunRowMapper implements RowMapper<Commodity> {
+	class CommodityRowMapper implements RowMapper<Commodity> {
 		@Override
 		public Commodity mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Commodity commodity = new Commodity();
+			
+			commodity.setCommodityDetailes(rs.getString("Commodity_Detailes"));
 			commodity.setCarName(rs.getString("Car_Name"));
 			commodity.setRegistrationNumber(rs.getString("Registration_Number"));
 			commodity.setSourceAdd(rs.getString("Source_Add"));
 			commodity.setDestinationAdd(rs.getString("Destination_Add"));
-			
 			return commodity;
 		}
 	}
 
 	public List<Commodity> findAll() {
-		return jdbcTemplate.query("select * from commodity",new RunRowMapper());
+		return jdbcTemplate.query("select * from commodity",new CommodityRowMapper());
 	}
 
 	public Optional<Commodity> findById(String Commodity_Detailes) {
-		return Optional.of(jdbcTemplate.queryForObject("select * from userDetailes where id=?",
+		return Optional.of(jdbcTemplate.queryForObject("select * from commodity where id=?",
 				new Object[] { Commodity_Detailes }, new BeanPropertyRowMapper<Commodity>(Commodity.class)));
 	}
 
 	public int deleteById(String CommodityDetailes) {
-		return jdbcTemplate.update("delete from run where UserName=?", new Object[] { CommodityDetailes });
+		return jdbcTemplate.update("delete from run where commodity=?", new Object[] { CommodityDetailes });
 	}
 
 	public int insert(Commodity commodity) {

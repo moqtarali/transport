@@ -50,13 +50,13 @@ public class UserLoginRepo {
 				new Object[] {  userDetailes.getUserName(),
 						userDetailes.getPswd() });
 	}
-    public int insert(Commodity run) {
-		System.out.println(run.getCarName());
+    public int insert(Commodity commodity) {
+		System.out.println(commodity.getCarName());
 		return jdbcTemplate.update(
 				"insert into userLogin (user_name, pwd)"
 						+ "values(?, ?)",
-				new Object[] {  run.getSourceAdd(),
-						run.getDestinationAdd() });
+				new Object[] {  commodity.getCommodityDetailes(),
+						 });
 	}
 
 

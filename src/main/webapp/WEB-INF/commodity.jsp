@@ -10,7 +10,7 @@
 </head>
 <body>
     <div align="center">
-        <form:form action="registerationsucess" method="post" modelAttribute="CommodityBean">
+        <form:form action="registerationsucess" method="post" modelAttribute="commodityBean">
             <table border="0">
                 <tr>
                     <td colspan="2" align="center"><h2>Spring MVC Form for booking Cargos</h2></td>
