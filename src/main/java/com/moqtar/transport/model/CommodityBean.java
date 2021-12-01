@@ -1,42 +1,57 @@
 package com.moqtar.transport.model;
 
 public class CommodityBean {
-	private String CommodityDetailes;
-	private String CarName;
-	private String RegistrationNumber;
-	private String SourceAdd;
-	private String DestinationAdd;
+	private String commodityDetailes;
+	private String carName;
+	private String registrationNumber;
+	private String sourceAdd;
+	private String destinationAdd;
 	
+	public CommodityBean() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public CommodityBean(String commodityDetailes, String carName, String registrationNumber, String sourceAdd,
+			String destinationAdd) {
+		super();
+		this.commodityDetailes = commodityDetailes;
+		this.carName = carName;
+		this.registrationNumber = registrationNumber;
+		this.sourceAdd = sourceAdd;
+		this.destinationAdd = destinationAdd;
+	}
+
 	public String getCommodityDetailes() {
-		return this.CommodityDetailes;
+		return commodityDetailes;
 	}
 	public void setCommodityDetailes(String commodityDetailes) {
-		this.CommodityDetailes = commodityDetailes;
+		this.commodityDetailes = commodityDetailes;
 	}
-	
 	public String getCarName() {
-		return this.CarName;
+		return carName;
 	}
 	public void setCarName(String carName) {
-		this.CarName = carName;
+		this.carName = carName;
 	}
 	public String getRegistrationNumber() {
-		return this.RegistrationNumber;
+		return registrationNumber;
 	}
 	public void setRegistrationNumber(String registrationNumber) {
-		this.RegistrationNumber = registrationNumber;
+		this.registrationNumber = registrationNumber;
 	}
 	public String getSourceAdd() {
-		return this.SourceAdd;
+		return sourceAdd;
 	}
 	public void setSourceAdd(String sourceAdd) {
-		this.SourceAdd = sourceAdd;
+		this.sourceAdd = sourceAdd;
 	}
 	public String getDestinationAdd() {
-		return this.DestinationAdd;
+		return destinationAdd;
 	}
 	public void setDestinationAdd(String destinationAdd) {
-		this.DestinationAdd = destinationAdd;
+		this.destinationAdd = destinationAdd;
 	}
+	
 	
 }

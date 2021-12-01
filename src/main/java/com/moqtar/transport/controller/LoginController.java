@@ -46,9 +46,12 @@ public class LoginController {
 				catch(Exception e){
 
 				}
-			if (userLogin != null) {
+			System.out.println(userLogin);
+			if (userLogin != null && userLogin.getUserName() != null && userLogin.getPwd() != null ) {
+				
 				model.addAttribute("msg", loginBean.getUserName());
 				
+		
 				return new ModelAndView("dashboard");
 				// return "dashboard.jsp";
 			} else {

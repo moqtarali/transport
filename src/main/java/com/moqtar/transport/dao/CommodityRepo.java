@@ -19,7 +19,7 @@ public class CommodityRepo {
 	
 	@Autowired
 	JdbcTemplate jdbcTemplate;
-
+   
 	class CommodityRowMapper implements RowMapper<Commodity> {
 		@Override
 		public Commodity mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -50,7 +50,7 @@ public class CommodityRepo {
 	public int insert(Commodity commodity) {
 		System.out.println( commodity.getCommodityDetailes());
 		return jdbcTemplate.update(
-				"insert into userDetailes (Commodity_Detailes, Car_Name, Registration_Number, Source_Add, Destination_Add,)"
+				" insert into Commodity (Commodity_Detailes, Car_Name, Registration_Number, Source_Add, Destination_Add) "
 						+ "values(?, ?, ?, ?, ?)",
 				new Object[] {commodity.getCommodityDetailes(), commodity.getCarName(), commodity.getRegistrationNumber(), commodity.getSourceAdd(),
 						commodity.getDestinationAdd()});
@@ -58,7 +58,7 @@ public class CommodityRepo {
 
 
 	public int update(Commodity commodity) {
-		return jdbcTemplate.update("update userDetailes "
+		return jdbcTemplate.update("update Commodity "
 				+ " setCommodity_Detailes= ?, Car_Name = ?, Registration_Number = ?, Source_Add = ?, Destination_Add = ? "
 				+ "where Commodity_Detailes = ?",
 				new Object[] {commodity.getCommodityDetailes(), commodity.getCarName(), commodity.getRegistrationNumber(), commodity.getSourceAdd(),

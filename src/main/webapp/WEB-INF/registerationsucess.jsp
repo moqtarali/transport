@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -52,7 +52,7 @@
                 <td>${userDetailes.mobilenumber}</td>
             </tr> 
             <tr>
-           <td colspan="2" align="center"><input type="submit" value="run" /></td>
+          
             </tr>
         </table>
        

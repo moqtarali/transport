@@ -1,6 +1,7 @@
 package com.moqtar.transport.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -10,24 +11,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.moqtar.transport.dao.CommodityRepo;
-import com.moqtar.transport.dao.UserDetailesRepo;
 import com.moqtar.transport.dao.entity.Commodity;
-import com.moqtar.transport.dao.entity.UserDetailes;
 import com.moqtar.transport.model.CommodityBean;
-
+@Controller
 public class CommodityController {
 	
 	@Autowired
 	private CommodityRepo commodityRepo;
 	
-	@RequestMapping(params= "commodity",value = "/login", method = RequestMethod.POST)
+	@RequestMapping(params= "AddCommodity",value = "/showCommodity", method = RequestMethod.POST)
 	public ModelAndView init(Model model) {
 			model.addAttribute("msg", "Please Enter Your Commodity Details");
 		model.addAttribute("commodityBean", new CommodityBean());
 		return new ModelAndView("commodity");
 	}
 
-	@RequestMapping(value = "/commodity", method = RequestMethod.POST)
+	@RequestMapping(value = "/savecommodity", method = RequestMethod.POST)
 
 	public ModelAndView save(@ModelAttribute("commodityBean") CommodityBean commodityBean, BindingResult result,
 			ModelMap model) {
