@@ -13,7 +13,7 @@
         <form:form action="savecommodity" method="post" modelAttribute= "commodityBean">
             <table border="0">
                 <tr>
-                    <td colspan="2" align="center"><h2>Spring MVC Form for booking Cargos</h2></td>
+                    <td colspan="2" align="center"><h2>Book Cargos</h2></td>
                 </tr>
                  <tr>
                     <td>CommodityDetailes:</td>
