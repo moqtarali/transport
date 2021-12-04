@@ -6,6 +6,11 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style>
+fieldset{
+
+
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Registration</title>
 </head>
@@ -19,36 +24,36 @@
 		 <tr>
                     <td>fullName:</td>
                     <td><form:input path="fullName" /></td>
-                </tr>
+                </tr><br>
 		 <tr>		
-                    <td>LastName:</td>
-                    <td><form:input path="lastName" /></td>
-                </tr>
+                    <td>LastName:</td><br>
+                    <td><form:input path="lastName" /></td><br>
+                </tr><br>
 
                 <tr>
-                    <td>UserName:</td>
+                    <td>UserName:</td><br>
                     <td><form:input path="userName" /></td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>Password:</td>
                     <td><form:password path="password" /></td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>E-mail:</td>
                     <td><form:input path="email" /></td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>DOB:</td>
                     <td><form:input path="dOB" /></td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td>Address:</td>
                     <td><form:input path="address" /></td>
-                </tr>
+                </tr><br>
 		 <tr>
                     <td>MobileNumber:</td>
                     <td><form:input path="mobileNumber" /></td>
-                </tr>
+                </tr><br>
                 <tr>
                     <td colspan="2" align="center"><input type="submit" value="Register" /></td>
                 </tr>

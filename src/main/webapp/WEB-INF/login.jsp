@@ -10,12 +10,17 @@ div{
 align = "center";
 
 }
+fieldset{
+border-radius: 50px;
+border-left: 60px;
+border-right:60px;
+}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login Form</title>
 </head>
 <body>
-
+<fieldset>
 <form:form action="login" name="submitForm" method="POST" modelAttribute="loginBean">
 
 
@@ -26,12 +31,12 @@ align = "center";
  </tr>
 <tr>
 <td>User Name</td>
-<td><form:input type="text" path="userName" /></td>
-</tr>
+<td><form:input type="text" path="userName" /><br></td><br>
+</tr><br>
 <tr>
 <td>Password</td>
-<td><form:input type="password" path="password" /></td>
-</tr>
+<td><form:input type="password" path="password" /><br></td><br>
+</tr><br>
 <tr>
 <td></td>
 <td><input type="submit" name="submit" value="Submit" /></td>
@@ -46,6 +51,6 @@ align = "center";
 </div>
 
 </form:form>
-
+</fieldset>
 </body>
 </html>

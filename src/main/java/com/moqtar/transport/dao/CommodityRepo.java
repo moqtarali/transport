@@ -26,10 +26,13 @@ public class CommodityRepo {
 			Commodity commodity = new Commodity();
 			
 			commodity.setCommodityDetailes(rs.getString("Commodity_Detailes"));
+			commodity.setName(rs.getString("Name_Of_Booking_person"));
+			commodity.setDateOfShipping(rs.getString("Date_Of_Shipping"));
 			commodity.setCarName(rs.getString("Car_Name"));
 			commodity.setRegistrationNumber(rs.getString("Registration_Number"));
 			commodity.setSourceAdd(rs.getString("Source_Add"));
 			commodity.setDestinationAdd(rs.getString("Destination_Add"));
+			commodity.setDestinationAdd(rs.getString("Estimated_Amount"));
 			return commodity;
 		}
 	}
@@ -50,19 +53,20 @@ public class CommodityRepo {
 	public int insert(Commodity commodity) {
 		System.out.println( commodity.getCommodityDetailes());
 		return jdbcTemplate.update(
-				" insert into Commodity (Commodity_Detailes, Car_Name, Registration_Number, Source_Add, Destination_Add) "
-						+ "values(?, ?, ?, ?, ?)",
-				new Object[] {commodity.getCommodityDetailes(), commodity.getCarName(), commodity.getRegistrationNumber(), commodity.getSourceAdd(),
-						commodity.getDestinationAdd()});
+				" insert into Commodity (Commodity_Detailes, Name_Of_Booking_person, Date_Of_Shipping, Car_Name, Registration_Number, Source_Add, Destination_Add, Estimated_Amount) "
+						+ "values(?, ?, ?, ?, ?, ?, ?, ?)",
+				new Object[] {commodity.getCommodityDetailes(), commodity.getName(), commodity.getDateOfShipping(), commodity.getCarName(), commodity.getRegistrationNumber(), commodity.getSourceAdd(),
+						commodity.getDestinationAdd(), commodity.getDateOfShipping()});
 	}
 
 
 	public int update(Commodity commodity) {
 		return jdbcTemplate.update("update Commodity "
-				+ " setCommodity_Detailes= ?, Car_Name = ?, Registration_Number = ?, Source_Add = ?, Destination_Add = ? "
+				+ " set Commodity_Detailes= ?,Name_Of_Booking_person=?, Date_Of_Shipping=?, Car_Name = ?, Registration_Number = ?, Source_Add = ?, Destination_Add = ?, Estimated_Amount=?"
 				+ "where Commodity_Detailes = ?",
-				new Object[] {commodity.getCommodityDetailes(), commodity.getCarName(), commodity.getRegistrationNumber(), commodity.getSourceAdd(),
-						commodity.getDestinationAdd()
+				new Object[] {commodity.getCommodityDetailes(), commodity.getName(), commodity.getDateOfShipping(), commodity.getCarName(),
+						commodity.getRegistrationNumber(), commodity.getSourceAdd(),
+						commodity.getDestinationAdd(), commodity.getEstimatedAmount()
 				});
 	}
 	

@@ -19,6 +19,14 @@
                     <td>CommodityDetailes:</td>
                     <td><form:input path="CommodityDetailes" /></td>
                 </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><form:input path="Name" /></td>
+                </tr>
+                <tr>
+                    <td>DateOfShipping:</td>
+                    <td><form:input path="DateOfShipping" /></td>
+                </tr>
 	        	 <tr>
                     <td>CarName:</td>
                     <td><form:input path="CarName" /></td>
@@ -37,6 +45,10 @@
                     <td><form:password path="DestinationAdd" /></td>
                 </tr>
                 <tr>
+                    <td>EstimatedAmount:</td>
+                    <td><form:input path="EstimatedAmount" /></td>
+                </tr>
+                <tr>
                     <td colspan="2" align="center"><input type="submit" value="savecommodity" /></td>
                 </tr>
             </table>
@@ -44,4 +56,3 @@
     </div>
 </body>
 </html>
- 

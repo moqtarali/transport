@@ -31,8 +31,9 @@ public class CommodityController {
 	public ModelAndView save(@ModelAttribute("commodityBean") CommodityBean commodityBean, BindingResult result,
 			ModelMap model) {
 				System.out.println(commodityBean.toString());
-	          	Commodity commodity = new Commodity(commodityBean.getCommodityDetailes(),commodityBean.getCarName(), commodityBean.getRegistrationNumber(),
-	          			commodityBean.getSourceAdd(), commodityBean.getDestinationAdd());
+	          	Commodity commodity = new Commodity(commodityBean.getCommodityDetailes(),commodityBean.getName(), 
+	          			commodityBean.getDateOfShipping(),commodityBean.getCarName(), commodityBean.getRegistrationNumber(),
+	          			commodityBean.getSourceAdd(), commodityBean.getDestinationAdd(), commodityBean.getEstimatedAmount());
 		commodityRepo.insert(commodity);
 		model.addAttribute("msg", commodityBean.getCommodityDetailes());
 		return new ModelAndView("commodity");
