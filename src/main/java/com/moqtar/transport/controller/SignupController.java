@@ -14,9 +14,9 @@ import com.moqtar.transport.dao.UserLoginRepo;
 import com.moqtar.transport.dao.entity.UserDetailes;
 import com.moqtar.transport.model.SignupBean;
 
-import com.moqtar.transport.dao.entity.UserDetailes;
 
-@Controller
+
+@Controller  
 public class SignupController {
 	@Autowired
 	private UserDetailesRepo userDetailesRepo;
@@ -37,13 +37,14 @@ public class SignupController {
 	public ModelAndView save(@ModelAttribute("signupBean") SignupBean signupBean, BindingResult result,
 			ModelMap model) {
 				System.out.println(signupBean.toString());
-		UserDetailes userDetailes = new UserDetailes(signupBean.getFullName(), signupBean.getLastName(),
-				signupBean.getUserName(), signupBean.getPassword(), signupBean.getEmail(), signupBean.getDOB(),
+		UserDetailes userDetailes = new UserDetailes(signupBean.getFullName(),signupBean.getMiddleName(), signupBean.getLastName(),
+				signupBean.getUserName(), signupBean.getPassword(), signupBean.getEmail(),
 				signupBean.getAddress(), signupBean.getMobileNumber());
 		userDetailesRepo.insert(userDetailes);
 		userLoginRepo.insert(userDetailes);
-
+		
 		model.addAttribute("msg", signupBean.getUserName());
+		model.addAttribute("userDetailes", signupBean);
 		return new ModelAndView("registerationsucess");
 
 	}

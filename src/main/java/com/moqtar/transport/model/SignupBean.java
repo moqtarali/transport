@@ -2,13 +2,15 @@ package com.moqtar.transport.model;
 
 public class SignupBean {
 	private String fullName;
+	private String middleName;
 	private String lastName;
 	private String userName;
 	private String password;
 	private String email;
-	private String dOB;
 	private String address;
 	private String mobileNumber;
+	
+	
 
 	public  String getFullName() {
 		return fullName;
@@ -17,7 +19,14 @@ public class SignupBean {
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
+	
+	public  String getMiddleName() {
+		return middleName;
+	}
 
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
 	public String getLastName() {
 		return lastName;
 	}
@@ -46,15 +55,9 @@ public class SignupBean {
 		return email;
 	}
 
+	
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getDOB() {
-		return dOB;
-	}
-
-	public void setDOB(String dob) {
-		this.dOB = dob;
 	}
 	public String getAddress() {
 		return address;
@@ -79,7 +82,6 @@ public class SignupBean {
 			", userName='" + getUserName() + "'" +
 			", password='" + getPassword() + "'" +
 			", email='" + getEmail() + "'" +
-			", dOB='" + getDOB() + "'" +
 			", address='" + getAddress() + "'" +
 			", mobileNumber='" + getMobileNumber() + "'" +
 			"}";

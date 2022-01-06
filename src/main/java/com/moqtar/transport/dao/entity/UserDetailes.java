@@ -2,22 +2,22 @@ package com.moqtar.transport.dao.entity;
 
 public class UserDetailes {
 	private String fullName;
+	private String middleName;
 	private String lastName;
 	private String userName;
 	private String pswd;
 	private String email;
-	private String dOfB;
 	private String address;
 	private String mobNumber;
 	
 
-	public UserDetailes(String fullName, String lastName, String userName, String pswd, String email, String dOfB, String address, String mobNumber) {
+	public UserDetailes(String fullName,String middleName, String lastName, String userName, String pswd, String email,  String address, String mobNumber) {
 		this.fullName = fullName;
+		this.middleName=middleName;
 		this.lastName = lastName;
 		this.userName = userName;
 		this.pswd = pswd;
 		this.email = email;
-		this.dOfB = dOfB;
 		this.address = address;
 		this.mobNumber = mobNumber;
 	}
@@ -33,6 +33,13 @@ public class UserDetailes {
 
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
+	}
+	public String getMiddleName() {
+		return this.fullName;
+	}
+
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
 	}
 
 	public String getLastName() {
@@ -67,13 +74,6 @@ public class UserDetailes {
 		this.email = email;
 	}
 
-	public String getDOfB() {
-		return this.dOfB;
-	}
-
-	public void setDOfB(String dOfB) {
-		this.dOfB = dOfB;
-	}
 
 	public String getAddress() {
 		return this.address;
@@ -93,3 +93,5 @@ public class UserDetailes {
 
 
 }
+
+	

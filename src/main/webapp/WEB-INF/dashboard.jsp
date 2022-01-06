@@ -5,6 +5,17 @@
 <html>
 
 <head>
+    <style>
+        body{
+            background-image: url(https://media.istockphoto.com/photos/transportation-modes-air-shipping-and-truck-picture-id855466918);
+        }
+        div{
+          
+            width: 100%;
+            height: 700px;
+        }
+        
+    </style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -14,11 +25,11 @@
 
 <body>
 
-<font color="green"><h2>Hello</h2></font>
 
-<h3>${msg}</h3> You have successfully logged in.
-<form:form action="showCommodity" name="submitForm" method="POST"><input type="submit" name="AddCommodity" value="Add Commodity"/></form:form>
-
+<div>
+ 
+ <button>Home</button><hr><form:form action="showCommodity" name="submitForm" method="POST"><input type="submit" name="AddCommodity" value="Add Commodity"/></form:form>
+</div>
 
 
 

@@ -24,11 +24,11 @@ public class UserDetailesRepo {
 		public UserDetailes mapRow(ResultSet rs, int rowNum) throws SQLException {
 			UserDetailes userDetailes = new UserDetailes();
 			userDetailes.setFullName(rs.getString("Full_name"));
+			userDetailes.setMiddleName(rs.getString("Middle_Name"));
 			userDetailes.setLastName(rs.getString("Last_name"));
 			userDetailes.setUserName(rs.getString("User_Name"));
 			userDetailes.setPswd(rs.getString("Pswd"));
 			userDetailes.setEmail(rs.getString("E_mail"));
-			userDetailes.setDOfB(rs.getString("Dof_B"));
 			userDetailes.setAddress(rs.getString("Address"));
 			userDetailes.setMobNumber(rs.getString("Mob_Number"));
 
@@ -52,19 +52,19 @@ public class UserDetailesRepo {
 	public int insert(UserDetailes userDetailes) {
 		System.out.println(userDetailes.getFullName());
 		return jdbcTemplate.update(
-				"insert into userDetailes (Full_name, Last_name, User_Name, Pswd, E_mail, Dof_B, Address, Mob_Number)"
-						+ "values(?, ?, ?, ? ,? ,? ,? ,?)",
-				new Object[] { userDetailes.getFullName(), userDetailes.getLastName(), userDetailes.getUserName(),
-						userDetailes.getPswd(), userDetailes.getEmail(), userDetailes.getDOfB(),
+				"insert into userDetailes (Full_name,Middle_Name, Last_name, User_Name, Pswd, E_mail, Address, Mob_Number)"
+						+ "values(?, ?, ?, ?, ? ,? ,? ,?)",
+				new Object[] { userDetailes.getFullName(),userDetailes.getMiddleName(), userDetailes.getLastName(), userDetailes.getUserName(),
+						userDetailes.getPswd(), userDetailes.getEmail(),
 						userDetailes.getAddress(), userDetailes.getMobNumber() });
 	}
 
 	public int update(UserDetailes userDetailes) {
 		return jdbcTemplate.update("update userDetailes "
-				+ " set Full_name = ?, Last_name = ?, UserName = ?, Pswd = ?, E_mail =  ?, Dof_B = ?, Address = ?, Mob_Number = ? "
+				+ " set Full_name = ?, Middle_Name = ?, Last_name = ?, UserName = ?, Pswd = ?, E_mail =  ?, Address = ?, Mob_Number = ? "
 				+ "where User_Name = ?",
-				new Object[] { userDetailes.getFullName(), userDetailes.getLastName(), userDetailes.getUserName(),
-						userDetailes.getPswd(), userDetailes.getEmail(), userDetailes.getDOfB(),
+				new Object[] { userDetailes.getFullName(),userDetailes.getMiddleName(), userDetailes.getLastName(), userDetailes.getUserName(),
+						userDetailes.getPswd(), userDetailes.getEmail(),
 						userDetailes.getAddress(), userDetailes.getMobNumber()
 
 				});
